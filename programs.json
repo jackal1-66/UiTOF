@@ -1,0 +1,27 @@
+[
+    {
+        "name":"AGILe",
+        "folder":"/home/bubu/AGILe",
+        "help":"This is just a helpline code, use parameter AGILe then execute"
+    },
+    {
+        "name":"Rivet",
+        "folder":"/home/bubu/Rivet",
+        "help":"This is just a helpline code, use parameter Rivet then execute"
+    },
+    {
+        "name":"Eyes",
+        "folder":"xeyes",
+        "help":"This is just a helpline code, use parameter xeyes then execute"
+    },
+    {
+        "name":"TestScript",
+        "folder":"/home/mgiacalo/GitHub/UiTOF/script.sh",
+        "help":"This is a test script to check parameter function"
+    },
+    {
+        "name":"ifconfig",
+        "folder":"ifconfig",
+        "help":"Simple ifconfig program"
+    }
+]
