@@ -12,10 +12,11 @@ class Ui(QtWidgets.QMainWindow):
         self.searchB.clicked.connect(self.click_s)
         self.exeB.clicked.connect(self.exe)
         self.comboBox.currentIndexChanged.connect(self.changeBox)
-        
+        self.setFixedSize(self.size())
+
         self.params = []
         
-        with open("/home/mgiacalo/GitHub/UiTOF/programs.json", 'r') as fil:
+        with open("/home/mgiacalo/Git/UiTOF/programs.json", 'r') as fil:
             self.fildata = json.load(fil)
             for data in self.fildata:
                 self.comboBox.addItem(data["name"])
