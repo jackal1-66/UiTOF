@@ -2,26 +2,49 @@
     {
         "name":"AGILe",
         "folder":"/home/bubu/AGILe",
-        "help":"This is just a helpline code, use parameter AGILe then execute"
+        "help":"This is just a helpline code, use parameter AGILe then execute",
+        "hold":false
     },
     {
         "name":"Rivet",
         "folder":"/home/bubu/Rivet",
-        "help":"This is just a helpline code, use parameter Rivet then execute"
+        "help":"This is just a helpline code, use parameter Rivet then execute",
+        "hold":false
     },
     {
         "name":"Eyes",
         "folder":"xeyes",
-        "help":"This is just a helpline code, use parameter xeyes then execute"
+        "help":"This is just a helpline code, use parameter xeyes then execute",
+        "hold":false
     },
     {
         "name":"TestScript",
         "folder":"/home/mgiacalo/GitHub/UiTOF/script.sh",
-        "help":"This is a test script to check parameter function"
+        "help":"This is a test script to check parameter function",
+        "hold":false
     },
     {
         "name":"ifconfig",
         "folder":"ifconfig",
-        "help":"Simple ifconfig program"
+        "help":"Simple ifconfig program",
+        "hold":false
+    },
+    {
+        "name":"daqStatus",
+        "folder":"/SOFT/SC/utils/daqstatus",
+        "help":"Acquisition Monitoring",
+        "hold":false
+    },
+    {
+        "name":"top",
+        "folder":"top",
+        "help":"This is just a terminal",
+        "hold":true
+    },
+    {
+        "name":"TestScriptHold",
+        "folder":"/home/mgiacalo/GitHub/UiTOF/scripthold.sh",
+        "help":"This is a test script to check parameter function with Hold",
+        "hold":true
     }
 ]

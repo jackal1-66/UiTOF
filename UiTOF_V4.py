@@ -39,19 +39,28 @@ class Ui(QtWidgets.QMainWindow):
     def exe(self):
         #print(self.fildata[self.comboBox.currentIndex()]["folder"])  
         self.process = QtCore.QProcess(self)
-        if self.par.text():
-            self.params = self.par.text().split()
-            #print(self.params)   
+        hold = self.fildata[self.comboBox.currentIndex()]["hold"]
+        if hold == False:
+            if self.par.text():
+                self.params = self.par.text().split()
+                #print(self.params)   
+            else:
+                self.params = []       
+            self.process.readyReadStandardOutput.connect(self.handle_stdout)
+            self.process.readyReadStandardError.connect(self.handle_stderr)
+            prog = self.fildata[self.comboBox.currentIndex()]["folder"]
+            if ".sh" in prog:
+                self.params.insert(0,prog)             
+                self.process.start("/bin/sh", self.params)
+            else:
+                self.process.start(prog, self.params)
         else:
-            self.params = []       
-        self.process.readyReadStandardOutput.connect(self.handle_stdout)
-        self.process.readyReadStandardError.connect(self.handle_stderr)
-        prog = self.fildata[self.comboBox.currentIndex()]["folder"]
-        if ".sh" in prog:
-            self.params.insert(0,prog)             
-            self.process.start("/bin/sh", self.params)
-        else:
-            self.process.start(prog, self.params)            
+            prog = self.fildata[self.comboBox.currentIndex()]["folder"]
+            self.params = ["-hold", "-e", prog]
+            if self.par.text():
+                self.params.append(self.par.text().split())
+            self.process.start("xterm", self.params)    
+                                
 
     def handle_stderr(self):
         data = self.process.readAllStandardError()
