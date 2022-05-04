@@ -1,6 +1,6 @@
 from PyQt5 import QtWidgets, uic, QtCore, QtGui
 import sys, json, os, glob
-
+import signal
 
 class Ui(QtWidgets.QMainWindow):
     def __init__(self):
@@ -16,7 +16,7 @@ class Ui(QtWidgets.QMainWindow):
 
         self.params = []
         
-        with open("/home/mgiacalo/Git/UiTOF/programs.json", 'r') as fil:
+        with open("/home/mgiacalo/GitHub/UiTOF/programs.json", 'r') as fil:
             self.fildata = json.load(fil)
             for data in self.fildata:
                 self.comboBox.addItem(data["name"])
@@ -74,6 +74,8 @@ class Ui(QtWidgets.QMainWindow):
         stdout = bytes(data).decode("utf8")
         if stdout:
             print(stdout)          
+
+signal.signal(signal.SIGINT, signal.SIG_DFL)  #Necessary to register CTRL+C signal from terminal
 
 app = QtWidgets.QApplication(sys.argv)
 window = Ui()
